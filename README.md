@@ -13,6 +13,6 @@ You can build the image using `docker build`:
 $ docker build -t guacdb:latest .
 ```
 
-The following arguments are supported:
+The following arguments are supported. Both default to `latest` when not specified.
  - `GUACAMOLE_TAG` - The tag of the [`guacamole/guacamole`](https://hub.docker.com/r/guacamole/guacamole) image to use.
  - `POSTGRES_TAG` - The tag of the [`postgres`](https://hub.docker.com/_/postgres) image to use.
