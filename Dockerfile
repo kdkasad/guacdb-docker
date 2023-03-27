@@ -8,3 +8,6 @@ RUN /opt/guacamole/bin/initdb.sh --postgres > /tmp/initdb.sql
 # Copy the initialization script into the proper directory on the PostgreSQL container
 FROM postgres:${POSTGRES_TAG}
 COPY --from=builder /tmp/initdb.sql /docker-entrypoint-initdb.d/intialize_guacamole.sql
+
+# Set the health check command
+HEALTHCHECK --timeout=5s CMD pg_isready
